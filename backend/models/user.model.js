@@ -25,12 +25,12 @@ const userSchema = new mongoose.Schema({
             minlength: [5 , 'email must be at least 5 characters long ']
         },
         password: {
-            type:string, 
+            type:String, 
             required:true ,
             select: false , 
         }, 
         socketId: {
-            type:string,
+            type:String,
         }
     
 })
