@@ -3,17 +3,17 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css'
-// import LocationSearchPanel from '../components/LocationSearchPanel';
-// import VehiclePanel from '../components/VehiclePanel';
-// import ConfirmRide from '../components/ConfirmRide';
-// import LookingForDriver from '../components/LookingForDriver';
-// import WaitingForDriver from '../components/WaitingForDriver';
+ import LocationSearchPanel from '../components/LocationSearchPanel';
+ import VehiclePanel from '../components/VehiclePanel';
+ import ConfirmRide from '../components/ConfirmRide';
+ import LookingForDriver from '../components/LookingForDriver';
+ import WaitingForDriver from '../components/WaitingForDriver';
 import { SocketContext } from '../context/SocketContext';
 import { useContext } from 'react';
 import { UserDataContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
-// import LiveTracking from '../components/LiveTracking';
+ import LiveTracking from '../components/LiveTracking';
 
 const Home = () => {
     const [ pickup, setPickup ] = useState('')
@@ -56,7 +56,7 @@ const Home = () => {
     socket.on('ride-started', ride => {
         console.log("ride")
         setWaitingForDriver(false)
-        navigate('/riding', { state: { ride } }) // Updated navigate to include ride data
+        navigate('/riding', { state: { ride } })
     })
 
 
@@ -72,7 +72,7 @@ const Home = () => {
             })
             setPickupSuggestions(response.data)
         } catch {
-            // handle error
+          
         }
     }
 
@@ -87,7 +87,7 @@ const Home = () => {
             })
             setDestinationSuggestions(response.data)
         } catch {
-            // handle error
+          
         }
     }
 
@@ -100,7 +100,7 @@ const Home = () => {
             _gsap.to(panelRef.current, {
                 height: '70%',
                 padding: 24
-                // opacity:1
+               
             })
             gsap.to(panelCloseRef.current, {
                 opacity: 1
@@ -109,7 +109,7 @@ const Home = () => {
             gsap.to(panelRef.current, {
                 height: '0%',
                 padding: 0
-                // opacity:0
+              
             })
             gsap.to(panelCloseRef.current, {
                 opacity: 0
